@@ -91,9 +91,31 @@ console.log(findFirstObject(arrayOfObjects, "id"));
 */
 
 // Given an array of objects and a target id return a new object with only the name. The structure for a single object in the array would be as the one above. The returned object would look like this -
-
 /*
+
 {
  name: "Robert"
 }
 */
+
+function findTargetName(arr, targetId) {
+  //   for (let obj of arr) {
+  //     if (obj.id === targetId) {
+  //       const { name } = obj;
+  //       return {
+  //         name,
+  //       };
+  //     }
+  //   }
+
+  const obj = arr.find((object) => object.id === targetId);
+
+  if (obj) {
+    return {
+      name: obj.name,
+    };
+  }
+}
+
+console.log(findTargetName(arrayOfObjects, "Q89L_j"));
+console.log(findTargetName(arrayOfObjects, "Q89L_E"));
