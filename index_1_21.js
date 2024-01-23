@@ -33,9 +33,9 @@ function findBiggerNumber(arr, numToFind) {
   return arr.find((num) => num > 14);
 }
 
-console.log(findBiggerNumber([15, 13, 16], 14));
-console.log(findBiggerNumber([9, 6, 3, 1], 14));
-console.log(findBiggerNumber([1, 2, 3, 4, 14, 15], 14));
+// console.log(findBiggerNumber([15, 13, 16], 14));
+// console.log(findBiggerNumber([9, 6, 3, 1], 14));
+// console.log(findBiggerNumber([1, 2, 3, 4, 14, 15], 14));
 
 // Given an array of strings, return the first string with length greater than 4 or undefined if no such string is found
 
@@ -49,12 +49,21 @@ function stringLengthGreaterThanFour(arr) {
   //   return undefined
 }
 
-console.log(stringLengthGreaterThanFour(["abc", "def", "ghijj", "klmnop"])); // "ghijj"
-console.log(stringLengthGreaterThanFour(["abc", "def", "ghi", "kop"])); // "ghij"
-console.log(stringLengthGreaterThanFour([])); // "ghij"
+// console.log(stringLengthGreaterThanFour(["abc", "def", "ghijj", "klmnop"])); // "ghijj"
+// console.log(stringLengthGreaterThanFour(["abc", "def", "ghi", "kop"])); // "ghij"
+// console.log(stringLengthGreaterThanFour([])); // "ghij"
 
 // Given an array of Objects and a target id return the first object that matches the id or undefined if no such object is found
 // Expected Structure of a SINGLE object -
+
+function findFirstObject(arr, target) {
+  for (let obj of arr) {
+    if (obj.id === target) {
+      return obj;
+    }
+  }
+  //   return undefined
+}
 
 const arrayOfObjects = [
   { id: "Y42C_a", name: "Robert", occupation: "Chef", eyeColor: "green" },
@@ -69,6 +78,9 @@ const arrayOfObjects = [
   { id: "Q89L_j", name: "Olivia", occupation: "Lawyer", eyeColor: "green" },
 ];
 
+console.log(findFirstObject(arrayOfObjects, "U45H_f"));
+console.log(findFirstObject(arrayOfObjects, "id"));
+
 /*
 {
  id: "Y42C_a",
@@ -79,6 +91,7 @@ const arrayOfObjects = [
 */
 
 // Given an array of objects and a target id return a new object with only the name. The structure for a single object in the array would be as the one above. The returned object would look like this -
+
 /*
 {
  name: "Robert"
