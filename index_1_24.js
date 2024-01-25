@@ -62,7 +62,7 @@ const dinos = [
     diet: "carnivorous",
     lengthInMeters: 14,
     period: "Late Cretaceous",
-    mya: [80.5],
+    mya: [80.5], // mya === 80.5 || mya === 79.5 ---> living dino
     info: "Elasmosaurus was an aquatic dinosaur with an extremely long neck that likely fed on other smaller aquatic fauna like fish, molluscs, and squid. E.D. Cope mistakenly placed the skull of an Elasmosaurus on the much shorter tail rather than the extremely long neck.",
   },
   {
@@ -73,7 +73,7 @@ const dinos = [
     diet: "herbivorous",
     lengthInMeters: 23,
     period: "Late Jurassic",
-    mya: [154, 142],
+    mya: [154, 142], // mya in between 154 and 142
     info: "Giraffatitan was a large sauropod related to Brachiosaurus with huge nostrils and nasal openings in its skull.",
   },
   {
@@ -212,10 +212,90 @@ const dinos = [
 
 // 1. Given a dinosaur object and a key return the value of the corresponding key in the object. If no key is provided return the dinosaurId
 
+function getValueByKeyFromDino(dino, key) {
+  //   return key ? dino[key] : dino.dinosaurId;
+  if (dino[key]) {
+    // "period"
+    return dino[key]; // dino["period"]
+  } else {
+    return dino.dinosaurId;
+  }
+}
+
+// console.log(getValueByKeyFromDino(dinos[5], "period"));
+// console.log(getValueByKeyFromDino(dinos[5], "hobbits")); // Invalid key
+// console.log(getValueByKeyFromDino(dinos[5])); // No key
+
 // ------------------------------------------------------
 // 2. Given a dinosaur object and an mya (Millions of years ago) value, return a boolean indicating whether it was alive during that time or not
 
 // If the dinosaur only has a single value for `mya`, they're considered alive if the `mya` value is equal to the given value or one less. For example, if a dinosaur has a `mya` value of `[29]`, the dinosaur's information will be returned if `29` is entered or `28` is entered.
 
+function isDinoAlive(dino, mya) {
+  if (dino.mya.length === 1) {
+    return dino.mya[0] === mya || dino.mya[0] - 1 === mya;
+  }
+  return mya >= dino.mya[1] && mya <= dino.mya[0];
+}
+
+// function isDinoAlive(dino, mya) {
+//   //   if (dino.mya.length === 1) {
+//   //     return dino.mya[0] === mya || dino.mya[0] - 1 === mya;
+//   //   } else {
+//   //     return mya >= dino.mya[1] && mya <= dino.mya[0];
+//   //   }
+//   return (
+//     dino.mya[0] === mya ||
+//     dino.mya[0] - 1 === mya ||
+//     (mya >= dino.mya[1] && mya <= dino.mya[0])
+//   );
+// }
+
+const dino1 = {
+  dinosaurId: "k-fVc9G-5Gm",
+  name: "Zephyrosaurus",
+  pronunciation: "ZEF-ear-ro-SORE-us",
+  meaningOfName: "West wind lizard",
+  diet: "herbivorous",
+  lengthInMeters: 1.8,
+  period: "Early Cretaceous",
+  mya: [120, 110],
+  info: "An ornithopod dinosaur known only by a partial skull and postcranial fragments, not much about Zephyrosaurus has been discovered.",
+};
+
+const dino2 = {
+  dinosaurId: "GKl035EYKN",
+  name: "Elasmosaurus",
+  pronunciation: "ee-LAZ-mo-sore-us",
+  meaningOfName: "thin plate lizard",
+  diet: "carnivorous",
+  lengthInMeters: 14,
+  period: "Late Cretaceous",
+  mya: [80.5], // mya === 80.5 || mya === 79.5 ---> living dino
+  info: "Elasmosaurus was an aquatic dinosaur with an extremely long neck that likely fed on other smaller aquatic fauna like fish, molluscs, and squid. E.D. Cope mistakenly placed the skull of an Elasmosaurus on the much shorter tail rather than the extremely long neck.",
+};
+
+console.log(isDinoAlive(dino1, 115)); // true
+console.log(isDinoAlive(dino1, 121)); // false
+console.log(isDinoAlive(dino2, 79.5)); // true
+console.log(isDinoAlive(dino2, 80.5)); // true
+console.log(isDinoAlive(dino2, 81.5)); // false
+// mya: [112, 100]
 // ------------------------------------------------------
 // 3. Given an array of dinosaurs and a key return a new array where each dinosaur object is replaced with the corresponding value of a specified key within each object. If no key is given or a wrong key is given, return the dinosaurIds
+
+function transformDinosaursArray(dinosaurs, key) {
+  //   const transformedArray = [];
+
+  //   for (let dino of dinosaurs) {
+  //     let value = dino[key] || dino.dinosaurId;
+  //     transformedArray.push(value);
+  //   }
+
+  //   return transformedArray;
+  return dinosaurs.map((dino) => dino[key] || dino.dinosaurId);
+}
+
+console.log(transformDinosaursArray(dinos, "name"));
+console.log(transformDinosaursArray(dinos));
+console.log(transformDinosaursArray(dinos, "favFood"));
