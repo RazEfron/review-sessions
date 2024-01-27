@@ -1,16 +1,64 @@
 // 1. Write a function that takes in an array and returns an object where each element in the array is a key, and the values are the number of times each element appears in the array -
 
+
+// Questions to ask ourselves while reading a prompt
+// 1. What are my inputs? 
+// 2. What is my output?
+// 3. What are the steps I need to take to get from input to output ? --> pseudo code
+
 // YOUR CODE HERE
 
+function countElements(arr) {
+  // create an object to count the elements
+  const obj = {};
+  // create a for loop to access each element
+  for (let key of arr) {
+
+    // check if the current element is already in the object 
+    if (obj[key]) {
+      // if it is, increment it's value by one
+      obj[key]++; // obj[key] = obj[key] + 1
+    } else {
+      obj[key] = 1;
+      // if it isn't set/assign it's value in the object to 1
+    }
+    console.log("key: ", key)
+    console.log("object: ", obj)
+    console.log("count: ", obj[key])
+  }
+  // return the object after the loop
+  return obj;
+}
+
 // Example:
-// ["apple", "orange", "apple", "banana", "apple", "orange"]
+console.log(countElements(["apple", "orange", "apple", "banana", "apple", "orange"]))
 // { apple: 3, orange: 2, banana: 1}
 
 // ------------------------------------------------------------------------
 
 // 2. Write a function that takes an object and a property name (key), and returns the value of the property. If the property doesn't exist in the object return an error message
 
+// 1. input - object, key
+// 2. output/return value - the value or error message if no value
+
+
 // YOUR CODE HERE
+
+function returnPropertyFromObject(obj, key) {
+  check if the property exists in the object by passing it the key
+  if (obj[key]) {
+    // if the property exists we return the value
+    return obj[key];
+  } else {
+    // if it doesn't exist we return an error message
+    return "ERRRORRRRRRRR";
+  }
+  // return obj[key] ? obj[key] : "ERRORRRRRRRRRRRRR";
+  // return obj[key] || "ERRORRRRR" // short circuting. Return the left side if it's true/truthy, otherwise return the right side
+}
+
+console.log(returnPropertyFromObject({}, "name"))
+console.log(returnPropertyFromObject({ name: "Maayan" }, "name"))
 
 // ------------------------------------------------------------------------
 
