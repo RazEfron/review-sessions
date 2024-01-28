@@ -13,7 +13,7 @@ function countElements(arr) {
   const obj = {};
   // create a for loop to access each element
   for (let key of arr) {
-
+    debugger
     // check if the current element is already in the object 
     if (obj[key]) {
       // if it is, increment it's value by one
@@ -45,7 +45,7 @@ console.log(countElements(["apple", "orange", "apple", "banana", "apple", "orang
 // YOUR CODE HERE
 
 function returnPropertyFromObject(obj, key) {
-  check if the property exists in the object by passing it the key
+  // check if the property exists in the object by passing it the key
   if (obj[key]) {
     // if the property exists we return the value
     return obj[key];
@@ -64,8 +64,6 @@ console.log(returnPropertyFromObject({ name: "Maayan" }, "name"))
 
 // 3. Given a person object, update their street to the new given street. The person object will have these properties -
 
-/*
-
 const person = {
   firstName: "John",
   lastName: "Doe",
@@ -77,18 +75,14 @@ const person = {
   }
 };
 
-*/
-
 // YOUR CODE HERE
 
+person.address.street = "New Street"
+console.log(person)
 // ------------------------------------------------------------------------
 
 // 4. Given the following object, preform the following tasks -
-//   a. Log the desk of the second software engineer in the development department
-//   b. Log the location of the head of the marketing department
-//   c. Log the name of the CEO's executive assistant
-//   d. Add yourself as a third software engineer to the development office
-//   e. Update the name of the head of marketing to "Johann Marketer"
+
 
 const companyOrganizationalStructure = {
   companyName: "TechCorp",
@@ -117,7 +111,7 @@ const companyOrganizationalStructure = {
             },
             softwareEngineer2: {
               name: "David Coder",
-              desk: "B802",
+              desk: "B802",  
             },
           },
         },
@@ -143,9 +137,16 @@ const companyOrganizationalStructure = {
     },
   },
 };
+//   a. Log the desk of the second software engineer in the development department
+//   b. Log the location of the head of the marketing department
+//   c. Log the name of the CEO's executive assistant
+//   d. Add yourself as a third software engineer to the development office
+//   e. Update the name of the head of marketing to "Johann Marketer"
 
 // YOUR CODE HERE
 
+console.log(companyOrganizationalStructure.departments.development.head.office.employees.softwareEngineer2.desk)
+console.log(companyOrganizationalStructure.departments.marketing.head.office.location)
 // ------------------------------------------------------------------------
 
 // 5. Given the following variables, create a new object. the key variable should be the key and the value variable should be it's corresponding value. You have to use the variables!
