@@ -85,34 +85,51 @@ function transformAndFilterByLength(arr) {
   // return arr.map((str) => str.length).filter((num) => num > 5);
 }
 
-["helllllo", "hi", "sup", "what's up"].map;
+// ["helllllo", "hi", "sup", "what's up"].filter(el => el.length > 5);
+// const myCallBack = el => el.length > 5
+// []
+// el = "helllllo"
+// myCallBack(el) =>
 
-// function myMap(arr, callback) {
-//   const newArr = [];
+function myMap(arr, callback) {
+  const newArr = [];
 
-//   for (let el of arr) {
-//     newArr.push(callback(el));
-//   }
+  for (let el of arr) {
+    newArr.push(callback(el));
+  }
 
-//   return newArr;
-// }
+  return newArr;
+}
 
-// function myFilter(arr, callback) {
-//   const newArr = [];
+function myFilter(arr, callback) {
+  const newArr = [];
 
-//   for (let el of arr) {
-//     if (callback(el)) {
-//       newArr.push(el);
-//     }
-//   }
+  for (let el of arr) {
+    if (callback(el)) {
+      newArr.push(el);
+    }
+  }
 
-//   return newArr;
-// }
+  return newArr;
+}
 
 console.log(transformAndFilterByLength(["helllllo", "hi", "sup", "what's up"]));
 
 // 4. Write a function that takes an array of numbers and returns the sum of all even numbers
 
+function sumOfEvenNums(arr) {
+    let sum = 0;
+
+    for (let num of arr) {
+      if (num % 2 === 0) {
+        sum += num;
+      }
+    }
+    return sum;
+//   arr.reduce((sum, num) => (num % 2 === 0 ? sum + num : sum));
+}
+
+console.log(sumOfEvenNums([1, 2, 3, 4, 5, 6])); // 12
 // 5. Write a function that takes an array of numbers and returns the min num
 
 // 6. Write a function that takes in a string and returns the character that appears the most times (only letters count)
