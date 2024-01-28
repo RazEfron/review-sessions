@@ -51,9 +51,23 @@ function getLengths(arr) {
 
 // 2. Write a function that takes an array of strings and returns an array of strings longer than 5 characters (spaces count)
 
+function replaceWithLength(arr) {
+//   const newArr = [];
+//   for (let str of arr) {
+//       if (str.length > 5) {
+//           newArr.push(str);
+//       }
+//   }
+//   return newArr;
+  return arr.filter(str => str.length > 5);
+}
+
+// ["helllllo", "hi", "sup", "what's up"].filter(str => str.length > 5);
+
+console.log(replaceWithLength(["helllllo", "hi", "sup", "what's up"])); // ["helllllo","what's up"]
 // 3. Write a function that takes an array of strings, and returns a new array of the lengths of strings longer than 5 characters
 
-// 4. Write a function that takes an array of numbers and returns the sum of all even numebrs
+// 4. Write a function that takes an array of numbers and returns the sum of all even numbers
 
 // 5. Write a function that takes an array of numbers and returns the min num
 
