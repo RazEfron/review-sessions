@@ -52,20 +52,64 @@ function getLengths(arr) {
 // 2. Write a function that takes an array of strings and returns an array of strings longer than 5 characters (spaces count)
 
 function replaceWithLength(arr) {
-//   const newArr = [];
-//   for (let str of arr) {
-//       if (str.length > 5) {
-//           newArr.push(str);
-//       }
-//   }
-//   return newArr;
-  return arr.filter(str => str.length > 5);
+  //   const newArr = [];
+  //   for (let str of arr) {
+  //       if (str.length > 5) {
+  //           newArr.push(str);
+  //       }
+  //   }
+  //   return newArr;
+  return arr.filter((str) => str.length > 5);
 }
 
 // ["helllllo", "hi", "sup", "what's up"].filter(str => str.length > 5);
 
 console.log(replaceWithLength(["helllllo", "hi", "sup", "what's up"])); // ["helllllo","what's up"]
 // 3. Write a function that takes an array of strings, and returns a new array of the lengths of strings longer than 5 characters
+
+function transformAndFilterByLength(arr) {
+  //   const longerThanFive = []; // initialize acc
+  //   for (const str of arr) {
+  //     if (str.length > 5) {
+  //       longerThanFive.push(str.length);
+  //     }
+  //   }
+  //   return longerThanFive;
+  // return arr.reduce((acc, str) => {
+  //     if (str.length > 5) {
+  //         acc.push(str.length);
+  //     }
+  //     return acc;
+  // }, [])
+  // return arr.filter((str) => str.length > 5).map((str) => str.length);
+  // return arr.map((str) => str.length).filter((num) => num > 5);
+}
+
+["helllllo", "hi", "sup", "what's up"].map;
+
+// function myMap(arr, callback) {
+//   const newArr = [];
+
+//   for (let el of arr) {
+//     newArr.push(callback(el));
+//   }
+
+//   return newArr;
+// }
+
+// function myFilter(arr, callback) {
+//   const newArr = [];
+
+//   for (let el of arr) {
+//     if (callback(el)) {
+//       newArr.push(el);
+//     }
+//   }
+
+//   return newArr;
+// }
+
+console.log(transformAndFilterByLength(["helllllo", "hi", "sup", "what's up"]));
 
 // 4. Write a function that takes an array of numbers and returns the sum of all even numbers
 
