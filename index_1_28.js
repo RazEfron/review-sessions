@@ -118,18 +118,32 @@ console.log(transformAndFilterByLength(["helllllo", "hi", "sup", "what's up"]));
 // 4. Write a function that takes an array of numbers and returns the sum of all even numbers
 
 function sumOfEvenNums(arr) {
-    let sum = 0;
+  let sum = 0;
 
-    for (let num of arr) {
-      if (num % 2 === 0) {
-        sum += num;
-      }
+  for (let num of arr) {
+    if (num % 2 === 0) {
+      sum += num;
     }
-    return sum;
-//   arr.reduce((sum, num) => (num % 2 === 0 ? sum + num : sum));
+  }
+  return sum;
+  //   arr.reduce((sum, num) => (num % 2 === 0 ? sum + num : sum));
 }
 
 console.log(sumOfEvenNums([1, 2, 3, 4, 5, 6])); // 12
 // 5. Write a function that takes an array of numbers and returns the min num
+
+function findMin(arr) {
+  //   return Math.min(...arr);
+  let min = Infinity;
+  // let min = arr[0];
+
+  for (let num of arr) {
+    if (num < min) {
+      min = num;
+    }
+  }
+
+  return min;
+}
 
 // 6. Write a function that takes in a string and returns the character that appears the most times (only letters count)
