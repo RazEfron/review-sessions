@@ -20,11 +20,12 @@ console.log(findMax([1, 3, 2])); // 3
 
 // Iterative Native Array Methods
 
-// 1. Filter - filters out what you specify to it in the return value of the callback function and returns a new array.
+// 1. .filter - filters out what you specify to it in the return value of the callback function and returns a new array.
 // 2. .every - returns a boolean based on the specified condition if all the elements return true
 // 3. .some - returns a boolean based on the specified condition if at least one element returns true
 // 4. .find - returns the first element that returns true from a specified condition
 // 5. .map - returns a new array where each element is transformed based on the return value of the callback
+// 6. .reduce - Can do multiple functions. Can emulate all the other native array methods
 
 // For each of the following exercises,
 // 1. write them using a for loop first
